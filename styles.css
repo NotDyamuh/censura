@@ -5,14 +5,14 @@
 }
 
 html, body {
-    height: 100%; /* Ensure full height */
+    height: 100%; /* Ensures full height */
+    overflow: hidden; /* Prevents body from scrolling */
 }
 
 body {
     font-family: Arial, sans-serif;
     color: white;
     line-height: 1.6;
-    overflow: hidden; /* Prevent body scrolling */
     background: linear-gradient(to bottom, #2e004f, #4B0082);
 }
 
@@ -34,13 +34,13 @@ body {
 
 .container {
     max-width: 800px;
-    margin: auto;
+    margin: 0 auto;
     padding: 20px;
     display: none; /* Initially hidden */
     height: calc(100vh - 40px); /* Fill remaining height */
     overflow-y: auto; /* Allow internal scrolling */
     position: relative; /* Ensure positioning context for children */
-    margin-top: 40px; /* Add margin to push down from the top */
+    margin-top: 40px; /* Space from the top */
 }
 
 header {
