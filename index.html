@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Censura</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="intro" id="intro">
+        <h1>Welcome to Censura</h1>
+        <p>Group of people who find Chromebook security flaws then take advantage of them.</p>
+    </div>
+
+    <div class="container" id="main-content">
+        <header>
+            <h1>Censura</h1>
+            <p class="description">{sen-su-ra}</p>
+            <p class="description">Paving the way for a teacher free technology experience.</p>
+        </header>
+        
+        <section class="projects">
+            <h2>Projects</h2>
+            <a href="https://sh1mmer.dyamuh.com" target="_blank" class="box">
+                <h3>SH1mmer Rehost</h3>
+                <p>A rehost of the SH1mmer website by Mercury Workshop after the main one got taken down by Google.</p>
+            </a>
+        </section>
+
+        <section class="coming-soon">
+            <h2>Coming Soon</h2>
+            <div class="box">
+                <h3>Remex</h3>
+                <p>Remex means RemoveExtention but in one word. We are currently working on this please check back later.</p>
+            </div>
+        </section>
+
+        <section class="members">
+            <h2>Members</h2>
+            <div class="member-circle" onclick="openPopup('Member 1', 'This is member 1.');">
+                <img src="profile1.jpg" alt="Member 1">
+            </div>
+            <div class="member-circle" onclick="openPopup('Member 2', 'This is member 2.');">
+                <img src="profile2.jpg" alt="Member 2">
+            </div>
+            <div class="member-circle" onclick="openPopup('Member 3', 'This is member 3.');">
+                <img src="profile3.jpg" alt="Member 3">
+            </div>
+            <div class="member-circle" onclick="openPopup('Member 4', 'This is member 4.');">
+                <img src="profile4.jpg" alt="Member 4">
+            </div>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 Censura. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const intro = document.getElementById('intro');
+            const mainContent = document.getElementById('main-content');
+            const darkPurple = '#4B0082';
+            document.body.style.backgroundColor = darkPurple;
+
+            setTimeout(() => {
+                intro.style.opacity = '0';
+                intro.style.transition = 'opacity 1s';
+
+                setTimeout(() => {
+                    intro.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    document.body.style.backgroundColor = darkPurple; 
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }, 1000);
+            }, 2000);
+        };
+
+        function openPopup(title, description) {
+            document.getElementById('popup-title').innerText = title;
+            document.getElementById('popup-description').innerText = description;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        function createStar() {
+            const star = document.createElement('div');
+            star.className = 'star';
+            document.body.appendChild(star);
+            star.style.left = Math.random() * 100 + 'vw';
+            star.style.top = Math.random() * 100 + 'vh';
+            const duration = Math.random() * 2 + 2;
+            star.style.animationDuration = duration + 's';
+            setTimeout(() => star.remove(), duration * 1000);
+        }
+
+        setInterval(createStar, 100);
+    </script>
+</body>
+</html>
