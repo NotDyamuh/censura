@@ -16,7 +16,7 @@
         <header>
             <h1>Censura</h1>
             <p class="description">{sen-su-ra}</p>
-            <p class="description">Paving the way for a teacher free technology experience.</p>
+            <p class="description">Paving the way for a teacher-free technology experience.</p>
         </header>
         
         <section class="projects">
@@ -78,7 +78,6 @@
                 setTimeout(() => {
                     intro.style.display = 'none';
                     mainContent.style.display = 'block';
-                    document.body.style.backgroundColor = darkPurple; 
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 }, 1000);
             }, 2000);
@@ -93,19 +92,6 @@
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
         }
-
-        function createStar() {
-            const star = document.createElement('div');
-            star.className = 'star';
-            document.body.appendChild(star);
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.top = Math.random() * 100 + 'vh';
-            const duration = Math.random() * 2 + 2;
-            star.style.animationDuration = duration + 's';
-            setTimeout(() => star.remove(), duration * 1000);
-        }
-
-        setInterval(createStar, 100);
     </script>
 </body>
 </html>
