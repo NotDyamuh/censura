@@ -4,12 +4,15 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Ensures the body takes the full height */
+}
+
 body {
     font-family: Arial, sans-serif;
     color: white;
     line-height: 1.6;
-    overflow: hidden; /* Prevents the body from scrolling */
-    position: relative;
+    overflow: hidden; /* Prevents scrolling on body */
     background: linear-gradient(to bottom, #2e004f, #4B0082);
 }
 
@@ -34,7 +37,7 @@ body {
     margin: auto;
     padding: 20px;
     display: none; /* Initially hidden */
-    height: calc(100vh - 40px); /* Full height minus margins */
+    height: 100vh; /* Full viewport height */
     overflow-y: auto; /* Allow scrolling within the container */
     position: relative; /* Ensure positioning context for children */
 }
@@ -72,10 +75,6 @@ h2 {
 
 .box:hover {
     background-color: rgba(128, 128, 128, 0.5);
-}
-
-h3 {
-    margin-bottom: 10px;
 }
 
 footer {
